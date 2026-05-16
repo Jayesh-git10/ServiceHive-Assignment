@@ -12,8 +12,8 @@ A full-stack Lead Management Dashboard built with the MERN stack (MongoDB, Expre
 - **Docker**: Containerized setup for easy deployment.
 
 ## Tech Stack
-- **Frontend**: React, TypeScript, Tailwind CSS, Lucide React, Axios.
-- **Backend**: Node.js, Express, TypeScript, MongoDB, Mongoose, Zod.
+- **Frontend**: React, TypeScript, Tailwind CSS.
+- **Backend**: Node.js, Express, TypeScript, MongoDB, Mongoose.
 - **Tools**: Docker, Docker Compose.
 
 ## Getting Started
