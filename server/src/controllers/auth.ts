@@ -32,6 +32,13 @@ export const register = async (req: Request, res: Response) => {
 
     res.status(201).json({ user: { id: user._id, name: user.name, email: user.email, role: user.role }, token });
   } catch (error: any) {
+    console.error('Registration error:', error);
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ 
+        message: 'Validation failed', 
+        errors: error.errors.map(e => ({ path: e.path, message: e.message })) 
+      });
+    }
     res.status(400).json({ message: error.message || 'Registration failed' });
   }
 };
