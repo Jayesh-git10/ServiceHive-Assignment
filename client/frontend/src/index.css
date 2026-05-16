@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #f59e0b; /* Amber 500 - Yellowish */
+  --color-primary-dark: #f97316; /* Orange 500 */
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@layer base {
+  body {
+    /* Light Mode: Airy, Clean, Indigo-focused */
+    @apply bg-slate-50 text-slate-900 transition-colors duration-500;
+  }
+  
+  .dark body {
+    /* Dark Mode: Deep Space, High Contrast, Teal-focused */
+    @apply bg-[#0B0F19] text-slate-100;
+  }
+}
+
+/* Custom classes to make it look "human made" */
+@layer components {
+  .theme-card {
+    @apply bg-white dark:bg-zinc-800 border-2 border-amber-100 dark:border-zinc-700 rounded-[2rem] shadow-xl shadow-amber-900/5 dark:shadow-none;
+  }
+  
+  .theme-input {
+    @apply w-full px-5 py-3 rounded-2xl border-2 border-amber-100 dark:border-zinc-700 bg-white dark:bg-zinc-800 focus:border-amber-500 dark:focus:border-orange-500 outline-none transition-all;
+  }
+}
