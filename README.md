@@ -44,6 +44,18 @@ To run the entire stack using Docker:
 ```bash
 docker-compose up --build
 ```
+### .env.example
+```
+# .env.example
+
+PORT=5000
+
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+NODE_ENV=development
+```
 
 ## API Documentation
 - `POST /api/auth/register`: Register a new user
