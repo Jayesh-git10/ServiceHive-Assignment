@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'ServiceHive API is running' });
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 
