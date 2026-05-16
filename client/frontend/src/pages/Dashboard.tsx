@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingLead, setEditingLead] = useState<Lead | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', source: 'Website' as const, status: 'New' as const });
+  const [formData, setFormData] = useState<Pick<Lead, 'name' | 'email' | 'source' | 'status'>>({ name: '', email: '', source: 'Website', status: 'New' });
 
   const fetchLeads = useCallback(async () => {
     setLoading(true);
